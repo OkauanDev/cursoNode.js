@@ -24,6 +24,12 @@ app.get("/sobre", function(req,res){
 })
 
 
+//aprendendo sobre parâmetros em rota
+app.get("/ola/:nome/:cargo", function(req,res){
+    res.send("<h1> Olá" +req.params.nome + "</h1>")//req.params ele exibe os parâmetros e as requisições atribuidas 
+})
+
+
 //abrindo servidor
 //detalher essa função sempre será a ultima do código
 app.listen(3000, function(){ // a function tem que ser de callback 
