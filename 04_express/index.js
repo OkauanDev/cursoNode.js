@@ -8,12 +8,13 @@ const express = require("express")
 const app = express()
 
 
+const path = require('path')
+
+
 
 
 //rota ou caminho 
-app.get("/", function(req,res){
-    res.send("Seja bem-vindo a app")
-})
+//
 
 app.get("/use", function(req,res){
     res.send("Bem-vindo usuário")
@@ -27,6 +28,11 @@ app.get("/sobre", function(req,res){
 //aprendendo sobre parâmetros em rota
 app.get("/ola/:nome/:cargo", function(req,res){
     res.send("<h1> Olá" +req.params.nome + "</h1>")//req.params ele exibe os parâmetros e as requisições atribuidas 
+})
+
+//Mandando um arquivo html
+app.get("/", function(req,res){
+    res.sendFile(__dirname + "/html/index.html")
 })
 
 
